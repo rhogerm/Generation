@@ -5,69 +5,56 @@ import java.util.Scanner;
 public class Exercicio4 {
 
 	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int idade,identgenero,fatorpsico,x=1;
+		int contpc=0,contmn=0,contha=0,contoc=0,contpn40=0,contpc18=0;
 		
-		int idade, sexo, temperamento, x = 1, contPessoaCalma = 0, contMulherNervosa = 0, contHomemAgressivo = 0, contOutrosCalmos = 0, contIdadeMaiorNervoso = 0, contIdadeMenorCalma = 0; 
+		Scanner leia = new Scanner(System.in);
 		
-		Scanner scan = new Scanner(System.in);
-		
-		System.out.println("Digite sua idade: ");
-		idade = scan.nextInt();
-		
-		System.out.println("Digite 1 para masculino, 2 para feminino ou 3 para outros: ");
-		sexo = scan.nextInt();
-		
-		System.out.println("Digite 1 para calma, 2 para nervosa e 3 para agressiva: ");
-		temperamento = scan.nextInt();
-		
-		while(x < 150) {
+		while(x<=5)
+		{
+			System.out.println("\nEntre com a sua idade: ");
+			idade = leia.nextInt();
+			System.out.println("\nEntre com a sua identidade de genero -- 1-Feminino  2-Masculino  3-Outros ");
+			identgenero = leia.nextInt();
+			System.out.println("\nEntre com o fator psicolÃ³gico -- 1-Calma  2-Nervosa  3-Agressiva");
+			fatorpsico = leia.nextInt();
 			
-			if(temperamento == 1) {
-								
-				contPessoaCalma++;
+			if(fatorpsico == 1)
+			{
+				contpc++;
 			}
-			
-			else if(sexo == 2 && temperamento == 2) {
-				
-				contMulherNervosa++;
+			if(identgenero==1 && fatorpsico==2)
+			{
+				contmn++;
 			}
-			
-			else if(sexo == 1 && temperamento == 3) {
-				
-				contHomemAgressivo++;
+			if(identgenero==2 && fatorpsico==3)
+			{
+				contha++;
 			}
-			
-			else if(sexo == 3 && temperamento == 1) {
-				
-				contOutrosCalmos++;
+			if(identgenero==3 && fatorpsico==1)
+			{
+				contoc++;	
 			}
-			
-			else if(idade > 40 && temperamento == 2) {
-				
-				contIdadeMaiorNervoso++;
+			if(fatorpsico==2 && idade>40)
+			{
+				contpn40++;
 			}
-			
-			else if(idade < 18 && temperamento == 1) {
-				
-				contIdadeMenorCalma++;
+			if(fatorpsico==1 && idade<18)
+			{
+				contpc18++;
 			}
-						
-			System.out.println("Digite sua idade: ");
-			idade = scan.nextInt();
-			
-			System.out.println("Digite 1 para masculino, 2 para feminino ou 3 para outros: ");
-			sexo = scan.nextInt();
-			
-			System.out.println("Digite 1 para calma, 2 para nervosa e 3 para agressiva: ");
-			temperamento = scan.nextInt();
 			
 			x++;
 		}
 		
-		System.out.println("O número de pessoas calmas: " + contPessoaCalma);
-		System.out.println("O número de mulheres nervosas: " + contMulherNervosa);
-		System.out.println("O número de homens agressivos: " + contHomemAgressivo);
-		System.out.println("O número de outros calmos: " + contOutrosCalmos);
-		System.out.println("O número de pessoas nervosas com mais de 40 anos: " + contIdadeMaiorNervoso);
-		System.out.println("O número de pessoas calmas com menos de 18 anos: " + contIdadeMenorCalma);
+		System.out.println("\nPessoas calmas: "+contpc);
+		System.out.println("\nMulheres nervosas: "+contmn);
+		System.out.println("\nHomens agressivos: "+contha);
+		System.out.println("\nOutros calmas: "+contoc);
+		System.out.println("\nPessoas nervosas acima de 40 anos: "+contpn40);
+		System.out.println("\nPessoas calmas com menos de 18 anos: "+contpc18);
+		
 	}
+
 }
